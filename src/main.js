@@ -4,6 +4,7 @@ import { BootstrapVue } from 'bootstrap-vue';
 
 import App from './App.vue';
 import router from './router';
+import store from './store'
 
 Vue.use(BootstrapVue);
 
@@ -15,6 +16,7 @@ const vueLifecycles = singleSpaVue({
     el: '#auth-app',
     render: (h) => h(App),
     router,
+    store
   },
 });
 
