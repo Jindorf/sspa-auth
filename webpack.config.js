@@ -1,6 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
 const { VueLoaderPlugin } = require("vue-loader");
+const StandaloneSingleSpaPlugin = require("standalone-single-spa-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   name: "single-spa-auth-app",
@@ -53,6 +55,11 @@ module.exports = {
     new VueLoaderPlugin(),
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1,
+    }),
+    new HtmlWebpackPlugin(),
+    new StandaloneSingleSpaPlugin({
+      appOrParcelName: "sspa-auth",
+      activeWhen: ["/"],
     }),
   ],
   externals: ["bootstrap", "bootstrap-vue", "single-spa-vue", "vue", "vue-router", "vuex"],
