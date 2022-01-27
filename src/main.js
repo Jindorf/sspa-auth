@@ -13,7 +13,6 @@ Vue.config.productionTip = false;
 const vueLifecycles = singleSpaVue({
   Vue,
   appOptions: {
-    el: '#auth-app',
     render: (h) => h(App),
     router,
     store
