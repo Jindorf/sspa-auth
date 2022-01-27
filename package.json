@@ -5,13 +5,14 @@
     "main": "dist/single-spa-auth-app.js",
     "scripts": {
         "serve": "vue-cli-service serve",
-        "build": "webpack",
+        "build": "webpack --config webpack.config.js",
         "build-vue-cli": "vue-cli-service build --target lib --formats umd --name single-spa-auth-app src/main.js",
         "lint": "vue-cli-service lint",
         "serve:standalone": "vue-cli-service serve --mode standalone"
     },
     "dependencies": {
-        "vue-loader": "^15.9.8"
+        "vue-loader": "^15.9.8",
+        "webpack": "^5.67.0"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "~4.5.0",
